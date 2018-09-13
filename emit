@@ -1,0 +1,29 @@
+#!/bin/sh
+
+EVENTS_FOLDER='/tmp/eventd'
+
+usage() {
+  echo "\
+Usage:
+emit EVENT_NAME"
+}
+
+if [ $# -ne 1 ]; then
+  usage
+  exit 1
+fi
+
+EVENT_NAME=${1}
+EVENT_FILE="${EVENTS_FOLDER}/${EVENT_NAME}.event"
+
+mkdir -p "${EVENTS_FOLDER}"
+
+if [[ ! -f "${EVENT_FILE}" ]]; then
+  exit 0
+fi
+
+for pid in $(cat "${EVENT_FILE}"); do
+  kill -s 0 $pid && kill -s USR1 $pid
+done
+
+rm "${EVENT_FILE}"
