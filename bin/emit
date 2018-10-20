@@ -1,6 +1,6 @@
 #!/bin/sh
 
-EVENTS_FOLDER='/tmp/eventd'
+EVENTS_FOLDER='/tmp/event.d'
 
 usage() {
   echo "\
