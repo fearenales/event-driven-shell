@@ -1,11 +1,15 @@
 # Event Driven Shell
 
-A (very) basic event driven framework for \*nix.
-The goal is to make shell instances capable of reacting to events.
+## Motivation
+
+Yes, we have several other ways of chaining actions using native shell operators.
+But my main issues with those are:
+ - They would rely in a single shell, and I'd love to keep my work separated by context;
+ - Depending on how many actions you are chaining or triggering, it can become not intuitive and hard to write and maintain.
 
 ## Usage
 
-[![Usage gif](https://s3.eu-central-1.amazonaws.com/tldr-assets/event-driven-shell.gif)](https://s3.eu-central-1.amazonaws.com/tldr-assets/event-driven-shell.mp4)
+[![Usage example](https://s3.eu-central-1.amazonaws.com/tldr-assets/event-driven-shell-example.gif)](https://s3.eu-central-1.amazonaws.com/tldr-assets/event-driven-shell-example.mp4)
 
 ## Installation
 
